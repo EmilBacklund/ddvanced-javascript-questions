@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 3</title>
+    <script type="text/javascript">
+      // Question 3
+      // Write a function that takes 1 parameter.
+      // on the first ccall of this function, it remembers it.
+      // on the second call it sums the passed parameter with the parameter passed
+      // during the previous call
+
+      // example:
+      // sum(3) // 3
+      // sum(5) // 3 + 5 // 8
+      // sum(228) // 8 + 228 // 236
+
+      function sum(x) {
+        // first time I run:
+        // sum.emil = undefined, but the number I write
+        // in the function when I call it will be stored in sum.emil for next time
+        // the "|| 0" is only there for the first time so it will be able to run the first time
+        sum.emil = (sum.emil || 0) + x;
+        return sum.emil;
+      }
+
+      console.log(sum(3));
+      console.log(sum(10));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 4</title>
+    <script>
+      // write an function with one argument, the argument is an object.
+      // the function will tell you how many strings the object contains
+
+      // create a function call it checkString that takes
+      // one argument (an object) and it counts
+      // the number of the properties which
+      // are string types.
+
+      var someObj = {
+        firstName: "Emil",
+        lastName: "Backlund",
+        pet: ["monkey", null],
+        skinColor: "white",
+        isHappy: true,
+        age: null,
+      };
+
+      function checkString(obj) {
+        var counter = 0;
+        for (var i in obj) {
+          // typeof
+          if (typeof obj[i] === "string") {
+            counter++;
+            // This is to make the loop to go inside the array to search for the strings inside there
+          } else if (typeof obj[i] === "object") {
+            counter += checkString(obj[i]);
+          }
+        }
+        return counter;
+      }
+
+      console.log(checkString(someObj));
+    </script>
+  </head>
+  <body></body>
+</html>
